@@ -27,8 +27,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
-
-        private Camera m_Camera;
+        
+        public Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
         private Vector2 m_Input;
@@ -36,7 +36,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
-        private Vector3 m_OriginalCameraPosition;
+        public Vector3 m_OriginalCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
         private bool m_Jumping;
@@ -238,6 +238,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
+
+        //called when character killed and respawn to look at neutral position
+        //public void ResetCameraRotation()
+        //{
+        //    m_MouseLook.
+        //}
+
+        // override object.GetHashCode
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            throw new NotImplementedException();
+            return base.GetHashCode();
+        }
+        
 
 
         private void OnControllerColliderHit(ControllerColliderHit hit)

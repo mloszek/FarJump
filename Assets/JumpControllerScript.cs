@@ -10,7 +10,7 @@ public class JumpControllerScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             SwitchGravity();
         }
@@ -18,7 +18,7 @@ public class JumpControllerScript : MonoBehaviour {
 
     void SwitchGravity()
     {
-        controller.m_GravityMultiplier = controller.m_GravityMultiplier == 0f ? 2f : 0;
+        controller.m_GravityMultiplier = controller.m_GravityMultiplier == 0f ? 2f : 0f;
         rdgbd.useGravity = rdgbd.useGravity == true ? false : true;
     }
 
