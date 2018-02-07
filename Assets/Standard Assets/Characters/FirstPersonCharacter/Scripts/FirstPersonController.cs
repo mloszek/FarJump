@@ -41,6 +41,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private Rigidbody rgdbd;
+
+
+        // Used to add gravity changing method to delegate
+        void OnEnable()
+        {
+            GravityController.OnClick += SwitchGravity;
+        }
 
         // Use this for initialization
         private void Start()
@@ -55,6 +63,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            rgdbd = GetComponent<Rigidbody>();
         }
 
 
@@ -269,6 +278,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        void SwitchGravity()
+        {
+            m_GravityMultiplier = m_GravityMultiplier == 0f ? 2f : 0f;
+            rgdbd.useGravity = rgdbd.useGravity == true ? false : true;
         }
     }
 }
