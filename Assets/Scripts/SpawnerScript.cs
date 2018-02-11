@@ -7,6 +7,7 @@ public class SpawnerScript : MonoBehaviour {
 
     public Canvas FadeOutScreen;
     public GameObject RespawnPoint;
+    [SerializeField] public Color fadeColor;
 
     private CanvasGroup group;
     private Vector3 initialPosition;
@@ -27,6 +28,11 @@ public class SpawnerScript : MonoBehaviour {
 
    IEnumerator FadeOut(GameObject player)
     {
+        FadeOutScreen.GetComponentInChildren<Image>().color = fadeColor;
+        if (gameObject.name == "ExitSpot")
+        {
+            player.SendMessage("Lock");
+        }
         while (group.alpha < 1)
         {
             group.alpha += 0.01f;
@@ -34,6 +40,10 @@ public class SpawnerScript : MonoBehaviour {
         }
         
         player.transform.position = initialPosition;
+        if (gameObject.name == "ExitSpot")
+        {
+            player.SendMessage("Lock");
+        }
         group.alpha = 0;
     }
 }
