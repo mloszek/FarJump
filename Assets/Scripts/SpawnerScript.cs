@@ -3,11 +3,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SpawnerScript : MonoBehaviour {
+public class SpawnerScript : MonoBehaviour
+{
 
     public Canvas FadeOutScreen;
     public GameObject RespawnPoint;
     [SerializeField] public Color fadeColor;
+    [SerializeField] public string nextScene;
 
     private CanvasGroup group;
     private Vector3 initialPosition;
@@ -26,24 +28,30 @@ public class SpawnerScript : MonoBehaviour {
         }
     }
 
-   IEnumerator FadeOut(GameObject player)
+    IEnumerator FadeOut(GameObject player)
     {
         FadeOutScreen.GetComponentInChildren<Image>().color = fadeColor;
         if (gameObject.name == "ExitSpot")
         {
             player.SendMessage("Lock");
         }
+
         while (group.alpha < 1)
         {
             group.alpha += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
-        
-        player.transform.position = initialPosition;
+
         if (gameObject.name == "ExitSpot")
         {
-            player.SendMessage("Lock");
+            SceneManager.LoadScene(nextScene);
         }
+        else
+        {
+            player.transform.SendMessage("ResetAntigravityStatus");
+            player.transform.position = initialPosition;
+        }
+
         group.alpha = 0;
     }
 }

@@ -9,19 +9,14 @@ public class GravityController : MonoBehaviour
     public delegate void OnClickAction();
     public static event OnClickAction OnClick;
     public Text antigravityAmount;
+    public bool inputLocked;
+    public int antigravity;
 
-    int antigravity;
-
-    private CharacterController m_CharacterController;
     private bool isAntigravityWorks;
-    private bool inputLocked;
 
     void Start()
     {
-        antigravity = 100;
-        m_CharacterController = GetComponent<CharacterController>();
         isAntigravityWorks = false;
-        inputLocked = false;
     }
 
     void Update()
@@ -37,7 +32,7 @@ public class GravityController : MonoBehaviour
                 StartCoroutine(DrainAntigravity());
             }
 
-            if (Input.GetButtonUp("Fire1"))
+            if (Input.GetButtonUp("Fire1") && isAntigravityWorks)
             {
                 isAntigravityWorks = false;
                 OnClick();
@@ -59,5 +54,22 @@ public class GravityController : MonoBehaviour
             OnClick();
             inputLocked = true;
         }
+    }
+
+    public void ReplenishAntigravity()
+    {
+        inputLocked = false;
+        if (isAntigravityWorks)
+        {
+            OnClick();
+        }
+        isAntigravityWorks = false;
+        antigravity = 100;
+    }
+
+    public void ResetAntigravityStatus()
+    {
+        inputLocked = false;
+        antigravity = 100;
     }
 }
