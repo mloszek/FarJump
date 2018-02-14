@@ -45,7 +45,7 @@ public class Controller2 : MonoBehaviour
 			yield return null;
 			GameObject child = new GameObject ("Child Object");
 			child.AddComponent<Controller2> ().Initialize (this, i);
-			child.AddComponent<RotatorScript> ().speed = childSpeed;
+            child.AddComponent<RotatorScript>();
 		}
 	}
 

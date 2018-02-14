@@ -64,12 +64,17 @@ public class GravityController : MonoBehaviour
             OnClick();
         }
         isAntigravityWorks = false;
-        antigravity = 100;
+        SetAntigravity(100);
     }
 
     public void ResetAntigravityStatus()
     {
         inputLocked = false;
-        antigravity = 100;
+        SetAntigravity(100);
+    }
+
+    public void SetAntigravity(int amount)
+    {
+        antigravity = amount;
     }
 }

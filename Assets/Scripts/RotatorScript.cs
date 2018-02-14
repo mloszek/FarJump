@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotatorScript : MonoBehaviour
 {
 
-	public int speed;
+	public static int speed = 5;
 
 	private bool doRotate = true;
 

@@ -10,6 +10,7 @@ public class SpawnerScript : MonoBehaviour
     public GameObject RespawnPoint;
     [SerializeField] public Color fadeColor;
     [SerializeField] public string nextScene;
+    public AudioSource source;
 
     private CanvasGroup group;
     private Vector3 initialPosition;
@@ -34,6 +35,7 @@ public class SpawnerScript : MonoBehaviour
         if (gameObject.name == "ExitSpot")
         {
             player.SendMessage("Lock");
+            source.Play();
         }
 
         while (group.alpha < 1)

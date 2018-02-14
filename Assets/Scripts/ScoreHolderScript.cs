@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class ScoreHolderScript : MonoBehaviour {
 
-    public System.Timers.Timer timer;
+    public System.Diagnostics.Stopwatch stopwatch;
 
 	void Start () {
-        timer = new System.Timers.Timer();
-        timer.Start();
+        stopwatch = new System.Diagnostics.Stopwatch();
+        stopwatch.Start();
         DontDestroyOnLoad(gameObject);
 	}
 
@@ -18,8 +18,11 @@ public class ScoreHolderScript : MonoBehaviour {
     {
         if (SceneManager.GetActiveScene().name == "ScoreScene")
         {
-            timer.Stop();
-            GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Text>().text = timer.ToString();
+            stopwatch.Stop();
+            System.TimeSpan timeSpan = stopwatch.Elapsed;
+            GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Text>().text = string.Format("your time: {0:00}:{1:00}:{2:00}.{3:00}",
+            timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
+           timeSpan.Milliseconds / 10);
         }
     }
 }
