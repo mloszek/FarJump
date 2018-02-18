@@ -1,7 +1,7 @@
 sceneSetups:
 - path: Assets/_Scenes/titleScene.unity
-  isLoaded: 0
-  isActive: 0
+  isLoaded: 1
+  isActive: 1
 - path: Assets/_Scenes/1stLevel.unity
   isLoaded: 0
   isActive: 0
@@ -11,6 +11,9 @@ sceneSetups:
 - path: Assets/_Scenes/3rdLevel.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/_Scenes/4thLevel.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/_Scenes/ScoreScene.unity
-  isLoaded: 1
-  isActive: 1
+  isLoaded: 0
+  isActive: 0

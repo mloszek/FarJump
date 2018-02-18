@@ -18275,7 +18275,7 @@ MonoBehaviour:
   FadeOutScreen: {fileID: 745865821}
   RespawnPoint: {fileID: 1854737084}
   fadeColor: {r: 1, g: 1, b: 1, a: 1}
-  nextScene: ScoreScene
+  nextScene: 4thLevel
   source: {fileID: 1697133005}
 --- !u!65 &1697133004
 BoxCollider:
@@ -18486,7 +18486,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4046313922685418, guid: 6c111db11c5b1874f8b826576f24bb28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 620.82
+      value: 595.57
       objectReference: {fileID: 0}
     - target: {fileID: 4046313922685418, guid: 6c111db11c5b1874f8b826576f24bb28, type: 2}
       propertyPath: m_LocalPosition.z

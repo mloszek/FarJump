@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarJump", "Assembly-CSharp-firstpass.csproj", "{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarJump", "Assembly-CSharp.csproj", "{BE3F878D-C6B7-24BA-1016-DAE4B3189CD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarJump", "Assembly-CSharp-firstpass.csproj", "{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarJump", "Assembly-CSharp-Editor-firstpass.csproj", "{97875825-D2E3-EEB9-3638-2C73087D741C}"
 EndProject
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE3F878D-C6B7-24BA-1016-DAE4B3189CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE3F878D-C6B7-24BA-1016-DAE4B3189CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE3F878D-C6B7-24BA-1016-DAE4B3189CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE3F878D-C6B7-24BA-1016-DAE4B3189CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC48F36-7387-AE3A-7B5B-8717AAC81CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{97875825-D2E3-EEB9-3638-2C73087D741C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{97875825-D2E3-EEB9-3638-2C73087D741C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97875825-D2E3-EEB9-3638-2C73087D741C}.Release|Any CPU.ActiveCfg = Release|Any CPU
