@@ -22,7 +22,9 @@ public class RotatingAround : MonoBehaviour {
         }
     }
 
-	void Update () {
+	void Update ()
+    {
         transform.RotateAround(centerObject.transform.position, orientation, speed * Time.deltaTime);
-	}
+        transform.RotateAround(transform.position, -orientation, speed * Time.deltaTime);
+    }
 }

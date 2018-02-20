@@ -45,10 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         private static Rigidbody rgdbd;
-
-        // Used for checking platform
-        private RaycastHit hit;
-
+        
         // Used to immobilise the player if he entered portal or fall to oblivion
         private bool isLocked = false;
 
@@ -97,7 +94,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 PlayLandingSound();
                 m_MoveDir.y = 0f;
                 m_Jumping = false;
-                CheckPlatform();
             }
             if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
             {
@@ -146,7 +142,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     PlayJumpSound();
                     m_Jump = false;
                     m_Jumping = true;
-                    transform.parent = null;
                 }
             }
             else
@@ -276,12 +271,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.LookRotation(transform, m_Camera.transform);
         }
 
-        //called when character killed and respawn to look at neutral position
-        //public void ResetCameraRotation()
-        //{
-        //    m_MouseLook.
-        //}
-
         // override object.GetHashCode
         public override int GetHashCode()
         {
@@ -316,18 +305,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 rgdbd = GetComponent<Rigidbody>();
             }
             rgdbd.useGravity = rgdbd.useGravity == true ? false : true;
-        }
-
-        //checks if object that character land on is a platform
-        void CheckPlatform()
-        {
-            if (Physics.Raycast(transform.position, -Vector3.up, out hit, 1f))
-            {
-                if (hit.collider.tag == "MovingPlatform")
-                {
-                    transform.parent = hit.transform;
-                }
-            }
         }
     }
 }
