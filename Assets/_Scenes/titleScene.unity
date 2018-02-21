@@ -401,17 +401,39 @@ Prefab:
     - target: {fileID: 114615804388780452, guid: 91b4b4db566b5924a96a248f4de32aa8,
         type: 2}
       propertyPath: iteration
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114615804388780452, guid: 91b4b4db566b5924a96a248f4de32aa8,
         type: 2}
       propertyPath: childScale
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114867959981512396, guid: 91b4b4db566b5924a96a248f4de32aa8,
         type: 2}
       propertyPath: speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114615804388780452, guid: 91b4b4db566b5924a96a248f4de32aa8,
+        type: 2}
+      propertyPath: mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: be7bd689385fee84db7f184e3b7c039f, type: 3}
+    - target: {fileID: 114615804388780452, guid: 91b4b4db566b5924a96a248f4de32aa8,
+        type: 2}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e7d8d95d6862cb4ead8d00da7256ef7, type: 2}
+    - target: {fileID: 4487882688781100, guid: 91b4b4db566b5924a96a248f4de32aa8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487882688781100, guid: 91b4b4db566b5924a96a248f4de32aa8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487882688781100, guid: 91b4b4db566b5924a96a248f4de32aa8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b4b4db566b5924a96a248f4de32aa8, type: 2}
