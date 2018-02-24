@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Controller2.cs" />
+     <Compile Include="Assets\Scripts\ExitMenuScript.cs" />
      <Compile Include="Assets\Scripts\ExitScript.cs" />
      <Compile Include="Assets\Scripts\FPSCreator.cs" />
      <Compile Include="Assets\Scripts\MainMenuScript.cs" />
