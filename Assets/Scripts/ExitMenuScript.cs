@@ -6,8 +6,6 @@ public class ExitMenuScript : MonoBehaviour {
 
     public Text text;
 
-    private bool isTextShown = false;
-
     void Start()
     {
         text.gameObject.SetActive(false);
